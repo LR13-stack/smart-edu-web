@@ -1,0 +1,173 @@
+---
+
+---
+<nav class="relative p-6 shadow bg-white">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Nombre de la empresa -->
+        <a class="text-primary-500 text-2xl font-bold leading-none" href="#">
+            SmartEdu
+        </a>
+
+        <!-- Botón del menú (para móviles) -->
+        <div class="lg:hidden">
+            <button
+                class="navbar-burger flex items-center hover:text-primary-500 p-3"
+            >
+                <svg
+                    class="block h-4 w-4 fill-current"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <title>Mobile menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menú -->
+        <ul class="hidden lg:flex lg:space-x-12">
+            <li>
+                <a class="font-semibold text-lg text-primary-500" href="#"
+                    >Inicio</a
+                >
+            </li>
+            <li>
+                <a class="font-semibold text-lg hover:text-primary-500" href="#"
+                    >Sobre Nosotros</a
+                >
+            </li>
+            <li>
+                <a class="font-semibold text-lg hover:text-primary-500" href="#"
+                    >Servicios</a
+                >
+            </li>
+            <li>
+                <a class="font-semibold text-lg hover:text-primary-500" href="#"
+                    >Clientes</a
+                >
+            </li>
+            <li>
+                <a class="font-semibold text-lg hover:text-primary-500" href="#"
+                    >Portafolio</a
+                >
+            </li>
+            <li>
+                <a class="font-semibold text-lg hover:text-primary-500" href="#"
+                    >Contacto</a
+                >
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Navbar para móbiles -->
+<div class="navbar-menu relative z-50 hidden">
+    <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+    <nav
+        class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
+    >
+        <div class="flex items-center mb-8">
+            <a class="mr-auto text-2xl font-bold text-primary-500 leading-none" href="#">
+                SmartEdu
+            </a>
+            <button class="navbar-close">
+                <svg
+                    class="h-6 w-6 cursor-pointer hover:text-primary-500"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div>
+            <ul>
+                <li class="mb-1">
+                    <a
+                        class="block p-4 text-lg font-semibold hover:bg-light-50 text-primary-500 rounded"
+                        href="#">Inicio</a
+                    >
+                </li>
+                <li class="mb-1">
+                    <a
+                        class="block p-4 text-lg font-semibold hover:bg-light-50 hover:text-primary-500 rounded"
+                        href="#">Sobre Nosotros</a
+                    >
+                </li>
+                <li class="mb-1">
+                    <a
+                        class="block p-4 text-lg font-semibold hover:bg-light-50 hover:text-primary-500 rounded"
+                        href="#">Servicios</a
+                    >
+                </li>
+                <li class="mb-1">
+                    <a
+                        class="block p-4 text-lg font-semibold hover:bg-light-50 hover:text-primary-500 rounded"
+                        href="#">Clientes</a
+                    >
+                </li>
+                <li class="mb-1">
+                    <a
+                        class="block p-4 text-lg font-semibold hover:bg-light-50 hover:text-primary-500 rounded"
+                        href="#">Portafolio</a
+                    >
+                </li>
+                <li class="mb-1">
+                    <a
+                        class="block p-4 text-lg font-semibold hover:bg-light-50 hover:text-primary-500 rounded"
+                        href="#">Contacto</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Abrir el menú
+        const burger = document.querySelectorAll(".navbar-burger");
+        const menu = document.querySelectorAll(".navbar-menu");
+
+        if (burger.length && menu.length) {
+            for (var i = 0; i < burger.length; i++) {
+                burger[i].addEventListener("click", function () {
+                    for (var j = 0; j < menu.length; j++) {
+                        menu[j].classList.toggle("hidden");
+                    }
+                });
+            }
+        }
+
+        // Cerrar el menú
+        const close = document.querySelectorAll(".navbar-close");
+        const backdrop = document.querySelectorAll(".navbar-backdrop");
+
+        if (close.length) {
+            for (var i = 0; i < close.length; i++) {
+                close[i].addEventListener("click", function () {
+                    for (var j = 0; j < menu.length; j++) {
+                        menu[j].classList.toggle("hidden");
+                    }
+                });
+            }
+        }
+
+        if (backdrop.length) {
+            for (var i = 0; i < backdrop.length; i++) {
+                backdrop[i].addEventListener("click", function () {
+                    for (var j = 0; j < menu.length; j++) {
+                        menu[j].classList.toggle("hidden");
+                    }
+                });
+            }
+        }
+    });
+</script>

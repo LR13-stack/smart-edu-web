@@ -1,0 +1,20 @@
+---
+export interface PanelProps {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class="shadow-sm shadow-light-50 overflow-hidden rounded-2xl w-[22rem] lg:w-[55%] md:w-4/5 h-auto mt-6">
+    <div
+        class="bg-primary-500 text-white text-lg font-semibold px-6 py-4 text-left"
+    >
+        {title}
+    </div>
+
+    <div class="bg-white text-primary-500 p-6 text-left">
+        {description}
+    </div>
+</div>
